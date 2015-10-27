@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="Car.css"/>
+</head>
+
+<body>
+
+    <script type="text/javascript" src="code.js">
+            function rent();        
+</script>
+
+<div id="header">
+<ul >
+        <li id="pic"><img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSelIyxNpOnjGtp_dQGWoI5ixTq3cEpw3tjSBfcvVGtt6atSdOO_Q" widdth="60" height="70"> </img></li>
+        <li> home</li>
+        <li> Help</li>
+        <li>reports</li>
+        <li>About us</li>
+
+</ul>
+   </div>
+      <h2> DOLLER RENTALS WELCOMES YOU </h2>
+
+        <div id="section">
+
+<p>
+    <table id="jagan">
+        <tr>
+    <th>Car Type</th>
+    <th>price</th>
+     </tr>
+  <tr class="alt">
+        <td>COMPACT</td>
+        <td>$29</td>
+    </tr>
+    <tr>
+        <td>MIDSIZE</td>
+        <td>$39</td>
+
+    </tr>
+    <tr class="alt">
+        <td>LUXURY</td>
+        <td>$49</td>
+    </tr>
+  </table>
+</p>
+</div>
+<div id="carlist">
+<ul>
+<li><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSVyzA27TNq7C_LpCK-cBwzcJQYTeVYyYg4O-lHNkN3CFVjUwVemw" widdth="50" height="50"> <b>COMPACT</b> </img> </li>
+<li><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ8tqp9LHJKaDOolBaEIJLNfXCkM4Nshu943dem2cf4eZfINk4UsQ" widdth="50" height="50"> <b>MID SIZE</b></img></li>
+<li><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQAJmXy0OflurOdGliiOqMGwI6lc-WUN4EBtKEYWtDzZt13yb5ovA" widdth="50" height="50"> <b>LUXURY</b> </img></li>
+</ul>
+<p style="color:red"> RENT A CAR NOW  </p>
+<input type="submit" name="submit"  value="FOR RENTALS" onclick="rent()" />
+</div>
+
+
+<div id="footer">
+
+ <p> Advertise With Us | Terms of Use | Privacy Policy | About Us | Contact Us |
+                
+</div>
+
+</body>
+</html>
