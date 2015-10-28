@@ -1,0 +1,134 @@
+<html ng-app="ShoppingItems">
+<head>
+	<title>
+	</title>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+		<div ng-controller="ItemsCtrl">
+			<div class="container-fluid center" style="width:50%; border-right:1px solid #333;background-color:#eee">
+ 			  <div class="row" style="border-bottom:1px solid #333;  padding:20px" ng-repeat="item in carts">
+				  	
+				  	<div class="row" style="border-bottom:1px solid #333; padding:20px">
+				  		<div class="col-lg-6" ><input type="radio"/> {{item.title}}  </div>
+						<div  style="float:right;">| <button ng-click="editItem()" >EDIT</button></div>
+				  	</div>
+				    <div class="row" style="padding-top:20px;">
+				    	<div class="col-lg-4">  <img src="{{item.image}}" style="height:150px;width:150px; border:1px solid #333"> </div>	
+				    	<div class="col-lg-6">{{item.title}}<br/>
+ 				    		<span ng-show="{{item.required_field_names}}" 
+				    			ng-repeat="color in item.required_field_values.color"> 
+								{{$first?'Color: ':''}}{{color.text}}{{$last ? '' : ','}}
+								<br/>
+ 					    		<span ng-show="{{item.required_field_names}}" 
+					    			ng-repeat="size in color.dep.size"> 
+									{{$first?'Size: ':''}}{{size.value}}{{$last ? '' : ','}}
+									 
+				    			</span>
+				    		</span> 
+				    		 
+				    		
+				    	</div>	
+				    	<div style="float: right;margin-right: 20px;">{{item.price}}</div>	
+
+				    </div>
+				     
+ 			  </div>
+			</div>
+		</div>
+  		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+
+	   	<script type="text/javascript">
+ 
+	    	var sMod = angular.module("ShoppingItems", []);
+	    	sMod.controller("ItemsCtrl", ["$scope", "$http", function($scope, $http){
+ 			    
+	    		$scope.carts =  [
+	{
+		"image": "https://res.cloudinary.com/ssenseweb/image/upload/b_white/v274/51283M013010_1.jpg",
+		"price": "$200.00",
+		"required_field_names": [],
+		"required_field_values": {},
+		"title": "Black Flat Top Sunglasses",
+		"url": "http://www.ssense.com/en-us/men/product/31-phillip-lim/black-flat-top-sunglasses/568903"
+	},
+	{
+		"image": "http://s7.vitaminshoppe.com/is/image/VitaminShoppe/2007284_set.jpg",
+		"price": "$17.99",
+		"required_field_names": [],
+		"required_field_values": {},
+		"title": "1000 Roses Morrocan Beauty Oil (1 Fluid Ounces Oil)",
+		"url": "http://www.vitaminshoppe.com/p/andalou-naturals-1000-roses-morrocan-beauty-oil-1-fl-oz-oil/ha-0003"
+	},
+	{
+		"image": "http://a248.e.akamai.net/f/248/9086/10h/origin-d4.scene7.com/is/image/Underarmour/1238618-036_DEFAULT?template=v6PdpBg&$size=551,585&rect=140,0,615,650",
+		"price": "$33.99",
+		"required_field_names": [
+			"color",
+			"size",
+			"quantity"
+		],
+		"required_field_values": {
+			"color": [
+				{
+					"dep": {
+						"size": [
+							{"value": "11.5K", "text": "11.5K"},
+							{"value": "12.5K", "text": "12.5K"},
+							{"value": "11K", "text": "11K"},
+							{"value": "12K", "text": "12K"},
+							{"value": "13K", "text": "13K"},
+							{"value": "1.5", "text": "1.5"},
+							{"value": "2", "text": "2"},
+							{"value": "3", "text": "3"}
+						]
+					},
+					"price": "$33.99",
+					"text": "STEEL (036)"
+				}
+			]
+		},
+		"title": "Girls’ Pre-School UA Ignite Shoes",
+		"url": "http://www.underarmour.com/shop/us/en/pid1238618"
+	},
+	{
+		"image": "http://a248.e.akamai.net/f/248/9086/10h/origin-d4.scene7.com/is/image/Underarmour/V5-1248041-905_LDF?template=v6PdpBg&$size=551,585&rect=140,0,615,650",
+		"price": "$44.99",
+		"required_field_names": [
+			"color",
+			"size",
+			"quantity"
+		],
+		"required_field_values": {
+			"color": [
+				{
+					"dep": {},
+					"price": "$44.99",
+					"text": "MOSSY OAK TREESTAND (905)"
+				},
+				{
+					"dep": {
+						"size": [
+							{
+								"text": "YSM",
+								"value": "YSM"
+							}
+						]
+					},
+					"price": "$44.99",
+					"text": "MOSSY OAK TREESTAND (905)"
+				}
+			]
+		},
+		"title": "Boys' Armour® Fleece Scent Control Hoodie",
+		"url": "http://www.underarmour.com/shop/us/en/pid1248041"
+	}
+];
+
+}]);
+	    	 
+	    </script>
+	    
+</body>
+</html>
