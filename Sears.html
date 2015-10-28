@@ -1,0 +1,257 @@
+<html ng-app="ShoppingItems">
+<head>
+	<title>
+	</title>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<style type="text/css">
+		#container{
+			width:50%;
+			max-height:80%;
+			overflow-y: auto;
+			height:1000px; 
+		}
+	</style>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+		<div ng-controller="ItemsCtrl">
+			<div class="container-fluid center" id="container">
+ 			  <div class="row">
+				    
+				    <div  ng-repeat="image in images" class="col-lg-4" style="background-color:lavenderblush;padding:10px"><img   width="300" src="{{image.image_url}}"/></div>
+				    <!-- Add clearfix for only the required viewport -->
+				    <div class="clearfix visible-xs"></div>
+				     
+ 			  </div>
+			</div>
+		</div>
+  		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+
+	   	<script type="text/javascript">
+ 
+	    	var sMod = angular.module("ShoppingItems", []);
+	    	sMod.controller("ItemsCtrl", ["$scope", "$http", function($scope, $http){
+ 			    /*$http.get('image.json').success(function(response){
+			    	$scope.items = response;
+ 			    });*/
+	    		$scope.images = [
+	{
+		'id' : 1,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11385227_1643354142565791_56726231_n.jpg"
+	},
+	{
+		'id' : 2,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11385565_936627436388424_793155714_n.jpg"
+	},
+	{
+		'id' : 3,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11352146_1632609110313291_403442567_n.jpg"
+	},
+	{
+		'id' : 4,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11348353_1644217439124400_756711006_n.jpg"
+	},
+	{
+		'id' : 5,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/s640x640/e15/1723605_394122844130725_1009796005_n.jpg"
+	},
+	{
+		'id' : 6,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s640x640/e15/11373522_596998397070289_274195178_n.jpg"
+	},
+	{
+		'id' : 7,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s640x640/e35/sh0.08/11375869_847532241962285_1433031921_n.jpg"
+	},
+	{
+		'id' : 8,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s640x640/e15/11427430_1464898160491879_835983478_n.jpg"
+	},
+	{
+		'id' : 9,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s640x640/e35/sh0.08/11421877_916209841770641_1625747240_n.jpg"
+	},
+	{
+		'id' : 10,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11386430_1668162486748014_287135859_n.jpg"
+	},
+	{
+		'id' : 11,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11249274_502595893232795_364804863_n.jpg"
+	},
+	{
+		'id' : 12,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11267231_1659252794308381_654968979_n.jpg"
+	},
+	{
+		'id' : 13,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11373772_466651746834372_869017098_n.jpg"
+	},
+	{
+		'id' : 14,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10013325_917354268321845_79136555_n.jpg"
+	},
+	{
+		'id' : 15,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s640x640/e15/11242276_788048487976435_652618646_n.jpg"
+	},
+	{
+		'id' : 16,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s640x640/e35/sh0.08/11246088_486600501515286_1701079401_n.jpg"
+	},
+	{
+		'id' : 17,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/s640x640/e15/11379773_776115659167622_1147618608_n.jpg"
+	},
+	{
+		'id' : 18,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s640x640/e35/sh0.08/11251389_1465746490409787_1789630633_n.jpg"
+	},
+	{
+		'id' : 19,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/s640x640/e35/sh0.08/11248727_950075408388476_160961564_n.jpg"
+	},
+	{
+		'id' : 20,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11375736_392839614243033_1983830133_n.jpg"
+	},
+	{
+		'id' : 21,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s640x640/e35/sh0.08/11426719_792350670881248_982343688_n.jpg"
+	},
+	{
+		'id' : 22,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/s640x640/e35/sh0.08/11427404_856982894348921_1938540833_n.jpg"
+	},
+	{
+		'id' : 23,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/s640x640/e35/sh0.08/11201553_497506010398030_2043543626_n.jpg"
+	},
+	{
+		'id' : 24,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11420768_391306931074371_1080929913_n.jpg"
+	},
+	{
+		'id' : 25,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/s640x640/e35/sh0.08/10809541_380082782187831_1729524383_n.jpg"
+	},
+	{
+		'id' : 26,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11356888_721836264628932_1256602593_n.jpg"
+	},
+	{
+		'id' : 27,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s640x640/e35/sh0.08/11410405_1631109813812471_1400678229_n.jpg"
+	},
+	{
+		'id' : 28,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11335500_846740088744030_525977546_n.jpg"
+	},
+	{
+		'id' : 29,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11427337_1001479336564022_1326828779_n.jpg"
+	},
+	{
+		'id' : 30,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/s640x640/e15/10560961_539302342886761_1753080176_n.jpg"
+	},
+	{
+		'id' : 31,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/s640x640/e35/sh0.08/11429660_1635046943400908_37971481_n.jpg"
+	},
+	{
+		'id' : 32,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11380767_480383772142743_140994596_n.jpg"
+	},
+	{
+		'id' : 33,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11252872_939292576091883_1705900124_n.jpg"
+	},
+	{
+		'id' : 34,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s640x640/e15/11356003_916932045031609_1594376205_n.jpg"
+	},
+	{
+		'id' : 35,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s640x640/e35/sh0.08/11355750_864782343559134_1527998329_n.jpg"
+	},
+	{
+		'id' : 36,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s640x640/e35/sh0.08/11355972_820119224771718_202848879_n.jpg"
+	},
+	{
+		'id' : 37,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/s640x640/e35/sh0.08/11355017_1465042490457671_1583319447_n.jpg"
+	},
+	{
+		'id' : 38,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/s640x640/e35/sh0.08/11410379_947519005311975_976417223_n.jpg"
+	},
+	{
+		'id' : 39,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11251753_940161856034289_1880447947_n.jpg"
+	},
+	{
+		'id' : 40,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/s640x640/e35/sh0.08/11379329_412030442323721_1656115364_n.jpg"
+	},
+	{
+		'id' : 41,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/s640x640/e35/sh0.08/10005399_1650620235150861_434232466_n.jpg"
+	},
+	{
+		'id' : 42,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11429732_898253470257974_939050299_n.jpg"
+	},
+	{
+		'id' : 43,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/s640x640/e35/sh0.08/11426258_1651677145072993_1502566697_n.jpg"
+	},
+	{
+		'id' : 44,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s640x640/e35/sh0.08/11246308_379991155532825_2343208_n.jpg"
+	},
+	{
+		'id' : 45,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11371962_498104177007789_14492652_n.jpg"
+	},
+	{
+		'id' : 46,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11335756_413368448858369_67418217_n.jpg"
+	},
+	{
+		'id' : 47,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s640x640/e35/sh0.08/11419024_960007430709898_19833726_n.jpg"
+	},
+	{
+		'id' : 48,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s640x640/e35/sh0.08/11378125_991594767548131_539281191_n.jpg"
+	},
+	{
+		'id' : 49,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/s640x640/e35/sh0.08/11380154_885043111531660_1424468581_n.jpg"
+	},
+	{
+		'id' : 50,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10249245_785626924897632_1774161848_n.jpg"
+	},
+	{
+		'id' : 51,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s640x640/e35/sh0.08/1172178_1470824793227535_1190594851_n.jpg"
+	},
+	{
+		'id' : 52,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s640x640/e35/sh0.08/11241477_883646795057650_1485817282_n.jpg"
+	},
+	{
+		'id' : 53,
+		'image_url' : "https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11355917_858696124179500_454853439_n.jpg"
+	}
+]
+
+	    	}]);
+	    	 
+	    </script>
+	    
+</body>
+</html>
